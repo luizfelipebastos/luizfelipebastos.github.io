@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    scroll-behavior: smooth;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 4px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 13px 0px;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+header.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #1f1f1f;
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin-bottom: 15px;
+    }
+
+    .btn-curriculo {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #foto img {
+        width: 200px;
+    }
+}
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+nav .menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px;
+    position: relative;
+}
+
+nav .menu li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: rgb(255, 0, 0);
+    bottom: 0;
+    left: 50%;
+    transition: width 0.2s ease, left 0.2s ease;
+}
+
+nav .menu li a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+nav .btn-curriculo {
+    background-color: #e60000;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav .btn-curriculo:hover {
+    background-color: #990000;
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 20px;
+    gap: 50px;
+    text-align: left;
+}
+
+#foto img {
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px red;
+}
+
+#sobre {
+    max-width: 600px;
+    background: linear-gradient(135deg, #3d3d3d, #222324);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    color: #dfdfdf;
+}
+
+#sobre h1 {
+    font-size: 3em;
+}
+
+#sobre h2 {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+#sobre p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#sobre .luiz {
+    color: red;
+}
+
+#sobre .bold {
+    color: #ff0000;
+}
+
+#formacoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px 20px;
+}
+
+.formacao {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    border: 2px solid #dc0101;
+    box-shadow: 0 0 10px rgba(220, 1, 1, 0.5);
+}
+
+#projetos h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+.projeto {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.projeto a {
+    color: #dc0101;
+    text-decoration: none;
+}
+
+.projeto a:hover {
+    color: white;
+}
+
+#contato {
+    padding: 20px;
+    background-color: #1f1f1f;
+    text-align: center;
+}
+
+#contato a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 40px;
+}
+
+#contato a i {
+    font-size: 100px;
+    transition: color 0.3s ease;
+}
+
+#contato a:hover i {
+    color: #dc0101;
+}
+
+footer {
+    background-color: #1f1f1f;
+    padding: 13px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #foto img {
+        width: 200px;
+    }
+}
+
+
+
+
+/* Particles.js container */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca as partículas abaixo do conteúdo */
+    background-color: #121212; /* Certifique-se de que o fundo seja o mesmo do body */
+}
+
