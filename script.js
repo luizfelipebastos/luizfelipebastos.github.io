@@ -18,9 +18,22 @@ window.addEventListener('scroll', () => {
 const hamburgerMenu = document.getElementById('hamburger-menu');
 const header = document.querySelector('header');
 
+
 hamburgerMenu.addEventListener('click', () => {
     header.classList.toggle('hidden');
 });
+
+window.addEventListener('resize', () => {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth <= 768 && !header.classList.contains('hidden')) {
+        header.classList.add('hidden');
+    }
+});
+
+
+
+
 
 
 
