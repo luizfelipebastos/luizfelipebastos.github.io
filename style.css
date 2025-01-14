@@ -282,14 +282,3 @@ footer {
 
 
 
-/* Particles.js container */
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Coloca as partículas abaixo do conteúdo */
-    background-color: #121212; /* Certifique-se de que o fundo seja o mesmo do body */
-}
-
